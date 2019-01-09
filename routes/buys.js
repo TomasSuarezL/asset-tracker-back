@@ -2,11 +2,12 @@ var express = require("express");
 var router = express.Router();
 const buyHandler = require("../handlers").buys;
 
-/* GET users listing. */
-router.get("/", function(req, res, next) {
-  res.send("respond with a resource");
-});
+router
+  .route("/")
+  .post(buyHandler.add)
+  .get(buyHandler.get);
 
-router.post("/", buyHandler.add);
+router.route("/:id")
+      .put(buyHandler.update)
 
 module.exports = router;

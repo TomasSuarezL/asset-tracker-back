@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("Buys", {
+    return queryInterface.createTable("buys", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -29,37 +29,37 @@ module.exports = {
       fee: {
         type: Sequelize.DECIMAL
       },
-      AssetId: {
+      asset_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: "AssetTypes", // name of Target model
+          model: "asset_types", // name of Target model
           key: "id" // key in Target model that we're referencing
         },
         onUpdate: "CASCADE",
         onDelete: "SET NULL"
       },
-      StateID: {
+      state_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: "BuyState", // name of Target model
+          model: "buy_state", // name of Target model
           key: "id" // key in Target model that we're referencing
         },
         onUpdate: "CASCADE",
         onDelete: "SET NULL"
       },
-      TypeId: {
+      type_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: "BuyTypes", // name of Target model
+          model: "buy_types", // name of Target model
           key: "id" // key in Target model that we're referencing
         },
         onUpdate: "CASCADE",
         onDelete: "SET NULL"
       },
-      CurrencyId: {
+      currency_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Currencies", // name of Target model
+          model: "currencies", // name of Target model
           key: "id" // key in Target model that we're referencing
         },
         onUpdate: "CASCADE",
@@ -78,6 +78,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("Buys");
+    return queryInterface.dropTable("buys");
   }
 };

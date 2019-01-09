@@ -1,7 +1,7 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
   const Currency = sequelize.define(
-    "Currency",
+    "currency",
     {
       description: DataTypes.STRING
     },
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Currency.associate = function(models) {
     // associations can be defined here
-    Currency.hasMany(models.Buys);
+    //Currency.hasMany(models.Buys);
   };
   return Currency;
 };

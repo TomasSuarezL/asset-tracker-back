@@ -1,17 +1,20 @@
 "use strict";
+
 module.exports = (sequelize, DataTypes) => {
   const BuyState = sequelize.define(
-    "BuyState",
+    "buy_state",
     {
+      id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
       description: DataTypes.STRING
     },
     {
-      timestamps: true
+      timestamps: true,
+      freezeTableName: true
     }
   );
-  BuyState.associate = function(models) {
-    // associations can be defined here
-    BuyState.hasMany(models.Buys);
+
+  BuyState.associate = models => {
+    //BuyState.hasMany(models.buys, { foreignKey: "id", as: "state_id" });
   };
   return BuyState;
 };

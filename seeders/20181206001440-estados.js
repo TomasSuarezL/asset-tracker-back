@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return Promise.all([
       queryInterface.bulkInsert(
-        "BuyState",
+        "buy_state",
         [
           {
             description: "Open"
@@ -19,7 +19,7 @@ module.exports = {
         {}
       ),
       queryInterface.bulkInsert(
-        "AssetTypes",
+        "asset_types",
         [
           {
             description: "Cryptocurrency"
@@ -37,7 +37,7 @@ module.exports = {
         {}
       ),
       queryInterface.bulkInsert(
-        "BuyTypes",
+        "buy_types",
         [
           {
             description: "Scalp"
@@ -55,7 +55,7 @@ module.exports = {
         {}
       ),
       queryInterface.bulkInsert(
-        "Currencies",
+        "currencies",
         [
           {
             description: "ARS"
@@ -70,6 +70,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return Promise.all([queryInterface.bulkDelete("BuyState", null, {}), queryInterface.bulkDelete("BuyTypes", null, {}), queryInterface.bulkDelete("AssetTypes", null, {}),queryInterface.bulkDelete("Currencies", null, {})]);
+    return Promise.all([queryInterface.bulkDelete("buy_state", null, {}), queryInterface.bulkDelete("buy_types", null, {}), queryInterface.bulkDelete("asset_types", null, {}),queryInterface.bulkDelete("currencies", null, {})]);
   }
 };

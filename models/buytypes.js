@@ -1,7 +1,7 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
   const BuyTypes = sequelize.define(
-    "BuyTypes",
+    "buy_types",
     {
       description: DataTypes.STRING
     },
