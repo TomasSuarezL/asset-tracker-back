@@ -7,7 +7,10 @@ router
   .post(buyHandler.add)
   .get(buyHandler.get);
 
-router.route("/:id")
-      .put(buyHandler.update)
+router
+  .route("/:id")
+  .put(buyHandler.update)
+  .delete(buyHandler.delete)
+  .get(buyHandler.getOne);
 
 module.exports = router;
