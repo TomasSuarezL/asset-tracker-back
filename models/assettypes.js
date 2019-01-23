@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       description: DataTypes.STRING
     },
-    {}
+    { timestamps: true, freezeTableName: true, underscored: true }
   );
   AssetTypes.associate = function(models) {
     // associations can be defined here

@@ -150,7 +150,7 @@ describe("Buys API Tests", () => {
         type: "Swing",
         currency: "USD",
         asset: "Fund",
-        stopLoss: 45
+        stop_loss: 45
       };
 
       request(app)
@@ -170,7 +170,7 @@ describe("Buys API Tests", () => {
               assert.equal(res.body.price, 66);
               assert.equal(res.body.state_id, 2);
               assert.equal(res.body.currency_id, 2);
-              assert.equal(res.body.stopLoss, 45);
+              assert.equal(res.body.stop_loss, 45);
               done();
             });
         });
@@ -196,7 +196,7 @@ describe("Buys API Tests", () => {
         type: "Swing",
         currency: "USD",
         asset: "Fund",
-        stopLoss: 45
+        stop_loss: 45
       };
 
       request(app)

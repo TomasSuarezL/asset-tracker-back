@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.STRING
     },
     {
-      timestamps: true
+      timestamps: false,
+      underscore: true
     }
   );
   Currency.associate = function(models) {

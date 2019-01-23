@@ -6,11 +6,11 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
       ticker: { type: DataTypes.STRING, allowNull: false, validate: { notEmpty: true } },
-      buyDate: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
+      buy_date: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
       price: { type: DataTypes.DECIMAL, allowNull: false },
       quantity: { type: DataTypes.INTEGER, allowNull: false },
       target: DataTypes.DECIMAL,
-      stopLoss: DataTypes.DECIMAL,
+      stop_loss: DataTypes.DECIMAL,
       fee: { type: DataTypes.DECIMAL, allowNull: false },
       state_id: {
         type: DataTypes.INTEGER,
@@ -42,6 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     {
+      underscored: true,
       hooks: {
         beforeUpdate: (buy, ops) => {
           buy.ticker = buy.ticker.toUpperCase();

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       description: DataTypes.STRING
     },
-    {}
+    { timestamps: false, underscore: true }
   );
   BuyTypes.associate = function(models) {
     // associations can be defined here

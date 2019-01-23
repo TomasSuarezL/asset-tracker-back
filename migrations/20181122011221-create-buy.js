@@ -11,7 +11,7 @@ module.exports = {
       ticker: {
         type: Sequelize.STRING
       },
-      buyDate: {
+      buy_date: {
         type: Sequelize.DATE
       },
       price: {
@@ -23,7 +23,7 @@ module.exports = {
       target: {
         type: Sequelize.DECIMAL
       },
-      stopLoss: {
+      stop_loss: {
         type: Sequelize.DECIMAL
       },
       fee: {
@@ -65,12 +65,12 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "SET NULL"
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn("NOW")
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn("NOW")

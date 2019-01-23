@@ -8,8 +8,9 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.STRING
     },
     {
-      timestamps: true,
-      freezeTableName: true
+      timestamps: false,
+      freezeTableName: true,
+      underscore: true
     }
   );
 
